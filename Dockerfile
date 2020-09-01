@@ -1,4 +1,4 @@
-# We'll use the ready made Horovod container.
+# We'll use the ready made Horovod container. It also has TF 1.12 bundled in.
 FROM horovod/horovod:0.16.0-tf1.12.0-torch1.0.0-mxnet1.4.0-py3.5
 
 # Setting this as the default working directory
@@ -22,4 +22,5 @@ RUN cd /project_code
 # Don't know why this is needed, but it's mentioned in the README, so...
 RUN mkdir sandbox_cachedir
 
+# Container starts bash terminal on startup
 ENTRYPOINT bash
